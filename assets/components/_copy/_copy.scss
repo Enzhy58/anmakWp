@@ -1,0 +1,18 @@
+.copy {
+    &__text p {
+        margin-bottom: 15px;
+    }
+
+    &__text span {
+        display: block;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__list {
+        margin-bottom: 15px;
+        list-style: disc;
+        padding-left: 20px;
+    }
+}

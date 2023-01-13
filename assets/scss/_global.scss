@@ -1,0 +1,144 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: $white;
+  color: $black;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.wrapper--active {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.page-section {
+  margin-bottom: 90px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $accent;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.title--left {
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: $accent;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: $accent;
+  color: $white;
+  padding: 18px;
+  position: relative;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+.zoom {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    width: 54px;
+    height: 54px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("../images/icons/zoom.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 10;
+  }
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .page-section {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,40 @@
+.about {
+
+    &__text,
+    &__title,
+    &__list,
+    &__list--custom {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        p:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__list {
+        list-style: disc;
+        padding-left: 20px;
+    }
+
+    &__item {
+        &--custom {
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 10%;
+                left: 0;
+                background-image: url("../images/icons/check.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+    }
+}

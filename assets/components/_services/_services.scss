@@ -1,0 +1,19 @@
+@import '../_technology/_technology';
+@import '../_specifications/_specifications';
+@import '../_price/_price';
+@import '../_services-benefits/_services-benefits';
+@import '../_orders/_orders';
+@import '../_interesting/_interesting';
+
+.services {
+    &__text {
+        margin-bottom: 50px;
+    }
+
+    &__text p {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+}

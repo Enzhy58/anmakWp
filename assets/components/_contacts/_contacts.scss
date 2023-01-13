@@ -1,0 +1,118 @@
+.contacts {
+    &__inner {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    &__box {
+        max-width: 442px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-right: 130px;
+        }
+    }
+
+    &__item {
+        padding-left: 74px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        &:last-child {
+            line-height: 1.2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            bottom: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &--phone::before {
+            background-image: url('../images/icons/contacts/phone.png');
+        }
+
+        &--email::before {
+            background-image: url('../images/icons/contacts/e-mail.png');
+        }
+
+        &--production::before {
+            background-image: url('../images/icons/contacts/production.png');
+        }
+    }
+
+    &__name {
+        display: block;
+        font-weight: 700;
+    }
+
+    &__scheme {
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    &__requisites {
+        padding-left: 74px;
+        position: relative;
+        margin-bottom: 30px;
+        ;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 54px;
+            height: 54px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-image: url('../images/icons/contacts/requisites.png');
+        }
+    }
+
+    &__map {
+        border: none;
+    }
+}
+
+
+@media (max-width: 992px) {
+
+    .contacts {
+        &__box:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .contacts {
+        &__inner {
+            display: block;
+        }
+
+        &__box:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 60px;
+        }
+
+        &__item--production {
+            margin-bottom: 20px;
+        }
+    }
+}

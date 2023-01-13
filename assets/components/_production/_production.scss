@@ -1,0 +1,212 @@
+@import '../_specifications/_specifications';
+
+.production {
+
+    &__wrapper,
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__slider {
+        width: 50%;
+        position: relative;
+        margin-right: 60px;
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+
+        li {
+            padding: 0 7px;
+
+            button {
+                font-size: 0;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #959595;
+            }
+
+            &.slick-active {
+                button {
+                    background-color: $dark;
+                }
+            }
+        }
+    }
+
+    &__box {
+        max-width: 515px;
+    }
+
+    &__list {
+        list-style: disc;
+        margin-bottom: 60px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__link {
+        padding: 18px 18px 18px 70px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            left: 4%;
+            transform: translateY(-50%);
+            background-image: url("../images/icons/calculator.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 2;
+        }
+    }
+
+    &__content {
+        max-width: 515px;
+        margin-right: 70px;
+    }
+
+    &__text {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__content-item {
+        padding-left: 70px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 44px;
+            height: 44px;
+            top: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        &:first-child::before {
+            background-image: url("../images/icons/production/1.svg");
+        }
+
+        &:last-child::before {
+            background-image: url("../images/icons/production/2.svg");
+        }
+    }
+
+    &__video {
+        position: relative;
+        padding-right: 30px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url("../images/monitor.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 515px;
+            height: 411px;
+            top: -20px;
+            left: -22px;
+            z-index: -1;
+        }
+
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    .production {
+        &__inner {
+            flex-direction: column;
+        }
+
+        &__content {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+
+        &__video {
+            margin-bottom: 50px;
+        }
+    }
+
+}
+
+@media (max-width: 880px) {
+    .production {
+        &__wrapper {
+            flex-direction: column;
+        }
+
+        &__slider {
+            margin-right: 0;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        &__box {
+            max-width: 600px;
+        }
+
+        &__list {
+            padding-left: 20px;
+        }
+
+        &__img {
+            margin: 0 auto;
+        }
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .production {
+        &__link::after {
+            height: 52px;
+        }
+
+        &__video {
+            padding-right: 0;
+
+            &::before {
+                width: 299px;
+                height: 348px;
+                top: -67px;
+                left: -13px;
+            }
+
+            iframe {
+                width: 275px;
+                height: 155px;
+            }
+        }
+    }
+
+}
